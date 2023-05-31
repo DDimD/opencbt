@@ -86,7 +86,11 @@ class ExportViewModel(application: Application): AndroidViewModel(application) {
                 strings.getString(R.string.csv_header_feelings),
                 strings.getString(R.string.csv_header_actions),
                 strings.getString(R.string.csv_header_distortions),
-                strings.getString(R.string.csv_header_rational))
+                strings.getString(R.string.csv_header_rational),
+                strings.getString(R.string.csv_header_arguments_for),
+                strings.getString(R.string.csv_header_arguments_against),
+                strings.getString(R.string.csv_header_alternative_thought),
+                strings.getString(R.string.csv_header_current_emotions))
 
         val filePath = "${getApplication<Application>().cacheDir.absolutePath}/$fileName"
         val csvWriter = CsvWriter()
@@ -109,7 +113,11 @@ class ExportViewModel(application: Application): AndroidViewModel(application) {
                 record.feelings,
                 record.actions,
                 record.getDistortionsString(getApplication()),
-                record.rational
+                record.rational,
+                record.argumentsFor,
+                record.argumentsAgainst,
+                record.alternativeThought,
+                record.currentEmotions
         )
     }
 
@@ -137,6 +145,10 @@ class ExportViewModel(application: Application): AndroidViewModel(application) {
             forHtml.append("<th>Предпринятые действия</th>")
             forHtml.append("<th>Когнитивные искажения</th>")
             forHtml.append("<th>Рациональный ответ</th>")
+            forHtml.append("<th>Аргументы за</th>")
+            forHtml.append("<th>Аргументы против</th>")
+            forHtml.append("<th>Взвешенная мысль</th>")
+            forHtml.append("<th>Текущие эмоции</th>")
             forHtml.append("</tr>")
 
             //---заполнение таблицы строками
@@ -153,6 +165,10 @@ class ExportViewModel(application: Application): AndroidViewModel(application) {
                 forHtml.append("<td>").append(record.actions).append("</td>")
                 forHtml.append("<td>").append(record.getDistortionsString(context)).append("</td>")
                 forHtml.append("<td>").append(record.rational).append("</td>")
+                forHtml.append("<td>").append(record.argumentsFor).append("</td>")
+                forHtml.append("<td>").append(record.argumentsAgainst).append("</td>")
+                forHtml.append("<td>").append(record.alternativeThought).append("</td>")
+                forHtml.append("<td>").append(record.currentEmotions).append("</td>")
                 forHtml.append("</tr>")
             }
             //--------------

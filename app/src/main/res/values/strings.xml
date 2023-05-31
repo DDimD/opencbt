@@ -12,6 +12,10 @@
     <string name="newrecord_text_situation">Ситуация при которой возникла мысль</string>
     <string name="newrecord_text_thought">Ваша автоматическая мысль</string>
     <string name="newrecord_text_rational">Ваш рациональный ответ</string>
+    <string name="newrecord_text_arguments_for">Аргументы в пользу заряженой мысли</string>
+    <string name="newrecord_text_arguments_against">Аргументы против заряженой мысли</string>
+    <string name="newrecord_text_alternative_thought">Взвешенные/альтернативные мысли</string>
+    <string name="newrecord_text_current_emotions">Состояние на данный момент</string>
     <string name="newrecord_text_emotions">Ваши эмоции (что Вы чувствуете?)</string>
     <string name="newrecord_text_intensity">Отметьте уровень дискомфорта </string>
     <string name="newrecord_text_distortions">Отметьте искажения</string>
@@ -28,6 +32,10 @@
     <string name="adapter_actions">Действия: %1$s</string>
     <string name="adapter_disput">Ответ: %1$s</string>
     <string name="adapter_intensity">Дискомфорт: <b>%1$d%%</b></string>
+    <string name="adapter_arguments_for">Аргументы за: %1$s</string>
+    <string name="adapter_arguments_against">Аргументы против: %1$s</string>
+    <string name="adapter_alternative_thought">Взвешенная мысль: %1$s</string>
+    <string name="adapter_current_emotions">Текущая эмоция: %1$s</string>
     <string name="adapter_empty">Вы создали пустую запись. Хотите продолжить заполнение?</string>
 
     <string name="newrecord_text_emptysituation">Поле \"Ситуация\" не заполнено</string>
@@ -215,6 +223,10 @@
     <string name="csv_header_actions">Предпринятные действия</string>
     <string name="csv_header_distortions">Когнитивные искажения</string>
     <string name="csv_header_rational">Рациональный ответ</string>
+    <string name="csv_header_arguments_for">Аргументы за</string>
+    <string name="csv_header_arguments_against">Аргументы против</string>
+    <string name="csv_header_alternative_thought">Взвешенная мысль</string>
+    <string name="csv_header_current_emotions">Текущие эмоции</string>
     <string name="export_wizard_export_btn">Выгрузить</string>
     <string name="export_wizard_cloud_export_btn">В облако</string>
     <string name="export_wizard_html_rb">HTML</string>

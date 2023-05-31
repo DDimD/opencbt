@@ -63,6 +63,10 @@ class DetailsViewModel(
             feelings: String,
             actions: String,
             intensity: Int,
+            argumentsFor: String,
+            argumentsAgainst: String,
+            alternativeThought: String,
+            currentEmotions: String,
             datetime : DateTime
     ) {
         uiScope.launch {
@@ -78,6 +82,10 @@ class DetailsViewModel(
                                 feelings,
                                 actions,
                                 intensity,
+                                argumentsFor,
+                                argumentsAgainst,
+                                alternativeThought,
+                                currentEmotions,
                                 /*dataSource.getRecordById(id).datetime*/datetime
                         )
                 )
