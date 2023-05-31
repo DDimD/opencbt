@@ -2,11 +2,11 @@
   "formatVersion": 1,
   "database": {
     "version": 2,
-    "identityHash": "951c44a36d17042e92b5a6b587cc615b",
+    "identityHash": "d84f43fb5bd457ef636eb43e659c06f9",
     "entities": [
       {
         "tableName": "diary",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`_id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `_situation` TEXT NOT NULL, `_thoughts` TEXT NOT NULL, `_rational` TEXT NOT NULL, `_emotions` TEXT NOT NULL, `_distortions` INTEGER NOT NULL, `_feelings` TEXT NOT NULL, `_actions` TEXT NOT NULL, `_intensity` INTEGER NOT NULL, `_datetime` INTEGER NOT NULL)",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`_id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `_situation` TEXT NOT NULL, `_thoughts` TEXT NOT NULL, `_rational` TEXT NOT NULL, `_emotions` TEXT NOT NULL, `_distortions` INTEGER NOT NULL, `_feelings` TEXT NOT NULL, `_actions` TEXT NOT NULL, `_intensity` INTEGER NOT NULL, `_arguments_for` TEXT NOT NULL, `_arguments_against` TEXT NOT NULL, `_alternative_thought` TEXT NOT NULL, `_current_emotions` TEXT NOT NULL, `_datetime` INTEGER NOT NULL)",
         "fields": [
           {
             "fieldPath": "id",
@@ -63,6 +63,30 @@
             "notNull": true
           },
           {
+            "fieldPath": "argumentsFor",
+            "columnName": "_arguments_for",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "argumentsAgainst",
+            "columnName": "_arguments_against",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "alternativeThought",
+            "columnName": "_alternative_thought",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "currentEmotions",
+            "columnName": "_current_emotions",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
             "fieldPath": "datetime",
             "columnName": "_datetime",
             "affinity": "INTEGER",
@@ -82,7 +106,7 @@
     "views": [],
     "setupQueries": [
       "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
-      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '951c44a36d17042e92b5a6b587cc615b')"
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'd84f43fb5bd457ef636eb43e659c06f9')"
     ]
   }
 }

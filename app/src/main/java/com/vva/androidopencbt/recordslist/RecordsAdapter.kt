@@ -1,5 +1,6 @@
 package com.vva.androidopencbt.recordslist
 
+import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -37,6 +38,10 @@ class RecordsAdapter(private val listener: RecordListener, private val longListe
         private val thoughtTextView: TextView = itemView.findViewById(R.id.thoughtTextView)
         private val disputTextView: TextView = itemView.findViewById(R.id.rationalTextView)
         private val emotionTextView: TextView = itemView.findViewById(R.id.emotionTextView)
+        private val argumentsForTextView: TextView = itemView.findViewById(R.id.argumentsForTextView)
+        private val argumentsAgainstTextView: TextView = itemView.findViewById(R.id.argumentsAgainstTextView)
+        private val alternativeThoughtTextView: TextView = itemView.findViewById(R.id.alternativeThoughtTextView)
+        private val currentEmotionsTextView: TextView = itemView.findViewById(R.id.currentEmotionsTextView)
         private val feelingsTextView: TextView = itemView.findViewById(R.id.feelingsTextView)
         private val actionsTextView: TextView = itemView.findViewById(R.id.actionsTextView)
         private val distortionTextView: TextView = itemView.findViewById(R.id.distortionTextView)
@@ -45,6 +50,7 @@ class RecordsAdapter(private val listener: RecordListener, private val longListe
         private val ll : LinearLayout  = itemView.findViewById(R.id.item_ll)
         private val res = itemView.resources
 
+        @SuppressLint("StringFormatInvalid")
         fun bind(record: DbRecord, onClickListener: RecordListener, onLongListener: RecordLongListener, quotes: Boolean, indication: Boolean, color : Boolean, dividers : Boolean, position: Int, selection: HashMap<DbRecord, Boolean>) {
             cardView.setOnClickListener {
                 onClickListener.onClick(it, record, position)
@@ -172,6 +178,34 @@ class RecordsAdapter(private val listener: RecordListener, private val longListe
                 } else {
                     disputTextView.visibility = View.VISIBLE
                     disputTextView.text = res.getString(R.string.adapter_disput, rational)
+                }
+
+                if (argumentsFor.isEmpty()) {
+                    argumentsForTextView.visibility = View.GONE
+                } else {
+                    argumentsForTextView.visibility = View.VISIBLE
+                    argumentsForTextView.text = res.getString(R.string.adapter_arguments_for, argumentsFor)
+                }
+
+                if (argumentsAgainst.isEmpty()) {
+                    argumentsAgainstTextView.visibility = View.GONE
+                } else {
+                    argumentsAgainstTextView.visibility = View.VISIBLE
+                    argumentsAgainstTextView.text = res.getString(R.string.adapter_arguments_against, argumentsAgainst)
+                }
+
+                if (alternativeThought.isEmpty()) {
+                    alternativeThoughtTextView.visibility = View.GONE
+                } else {
+                    alternativeThoughtTextView.visibility = View.VISIBLE
+                    alternativeThoughtTextView.text = res.getString(R.string.adapter_alternative_thought, alternativeThought)
+                }
+
+                if (currentEmotions.isEmpty()) {
+                    currentEmotionsTextView.visibility = View.GONE
+                } else {
+                    currentEmotionsTextView.visibility = View.VISIBLE
+                    currentEmotionsTextView.text = res.getString(R.string.adapter_current_emotions, currentEmotions)
                 }
             }
         }

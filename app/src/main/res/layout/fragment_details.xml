@@ -187,6 +187,78 @@
                     android:maxLines="4" />
             </com.google.android.material.textfield.TextInputLayout>
 
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/argumentsForInputLayout"
+                style="@style/AppTheme.Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/newrecord_text_arguments_for"
+                app:layout_constraintEnd_toEndOf="@+id/actionsInputLayout"
+                app:layout_constraintStart_toStartOf="@+id/actionsInputLayout"
+                app:layout_constraintTop_toBottomOf="@+id/actionsInputLayout">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/argumentsForEditText"
+                    style="@style/AppTheme.Widget.AppCompat.EditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:maxLines="4" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/argumentsAgainstInputLayout"
+                style="@style/AppTheme.Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/newrecord_text_arguments_against"
+                app:layout_constraintEnd_toEndOf="@+id/actionsInputLayout"
+                app:layout_constraintStart_toStartOf="@+id/actionsInputLayout"
+                app:layout_constraintTop_toBottomOf="@+id/actionsInputLayout">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/argumentsAgainstEditText"
+                    style="@style/AppTheme.Widget.AppCompat.EditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:maxLines="4" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/alternativeThoughtInputLayout"
+                style="@style/AppTheme.Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/newrecord_text_alternative_thought"
+                app:layout_constraintEnd_toEndOf="@+id/actionsInputLayout"
+                app:layout_constraintStart_toStartOf="@+id/actionsInputLayout"
+                app:layout_constraintTop_toBottomOf="@+id/actionsInputLayout">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/alternativeThoughtEditText"
+                    style="@style/AppTheme.Widget.AppCompat.EditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:maxLines="4" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/currentEmotionsInputLayout"
+                style="@style/AppTheme.Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/newrecord_text_current_emotions"
+                app:layout_constraintEnd_toEndOf="@+id/actionsInputLayout"
+                app:layout_constraintStart_toStartOf="@+id/actionsInputLayout"
+                app:layout_constraintTop_toBottomOf="@+id/actionsInputLayout">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/currentEmotionsEditText"
+                    style="@style/AppTheme.Widget.AppCompat.EditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:maxLines="4" />
+            </com.google.android.material.textfield.TextInputLayout>
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

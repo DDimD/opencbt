@@ -38,6 +38,14 @@ abstract class CbdDatabase: RoomDatabase() {
                                 "$COLUMN_INTENSITY = 0 WHERE $COLUMN_INTENSITY IS NULL")
                         database.execSQL("UPDATE $TABLE_NAME SET " +
                                 "$COLUMN_DISTORTIONS = '' WHERE $COLUMN_DISTORTIONS IS NULL")
+                        database.execSQL( "UPDATE $TABLE_NAME SET " +
+                                "$COLUMN_ARGUMENTS_FOR = '' WHERE $COLUMN_ARGUMENTS_FOR IS NULL")
+                        database.execSQL("UPDATE $TABLE_NAME SET " +
+                                "$COLUMN_ARGUMENTS_AGAINST = '' WHERE $COLUMN_ARGUMENTS_AGAINST IS NULL")
+                        database.execSQL("UPDATE $TABLE_NAME SET " +
+                                "$COLUMN_ALTERNATIVE_THOUGHT = '' WHERE $COLUMN_ALTERNATIVE_THOUGHT IS NULL")
+                        database.execSQL("UPDATE $TABLE_NAME SET " +
+                                "$COLUMN_CURRENT_EMOTIONS = '' WHERE $COLUMN_CURRENT_EMOTIONS IS NULL")
                         database.execSQL("UPDATE $TABLE_NAME SET " +
                                 "$COLUMN_DATETIME = 0 WHERE $COLUMN_DATETIME IS NULL")
                         database.execSQL("ALTER TABLE $TABLE_NAME RENAME TO $TABLE_NAME$oldSuffix")
@@ -51,6 +59,10 @@ abstract class CbdDatabase: RoomDatabase() {
                                 "$COLUMN_ACTIONS TEXT NOT NULL, " +
                                 "$COLUMN_INTENSITY INTEGER NOT NULL, " +
                                 "$COLUMN_DISTORTIONS INTEGER NOT NULL, " +
+                                "$COLUMN_ARGUMENTS_FOR TEXT NOT NULL, " +
+                                "$COLUMN_ARGUMENTS_AGAINST TEXT NOT NULL, " +
+                                "$COLUMN_ALTERNATIVE_THOUGHT TEXT NOT NULL, " +
+                                "$COLUMN_CURRENT_EMOTIONS TEXT NOT NULL, " +
                                 "$COLUMN_DATETIME INTEGER NOT NULL)")
                         database.execSQL("INSERT INTO $TABLE_NAME " +
                                 "SELECT $COLUMN_ID, " +
@@ -62,6 +74,10 @@ abstract class CbdDatabase: RoomDatabase() {
                                 "$COLUMN_ACTIONS, " +
                                 "$COLUMN_INTENSITY, " +
                                 "$COLUMN_DISTORTIONS, " +
+                                "$COLUMN_ARGUMENTS_FOR, " +
+                                "$COLUMN_ARGUMENTS_AGAINST, " +
+                                "$COLUMN_ALTERNATIVE_THOUGHT, " +
+                                "$COLUMN_CURRENT_EMOTIONS, " +
                                 "$COLUMN_DATETIME FROM $TABLE_NAME$oldSuffix")
                         database.setTransactionSuccessful()
                     }

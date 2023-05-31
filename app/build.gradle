@@ -5,6 +5,10 @@ apply plugin: "androidx.navigation.safeargs"
 apply plugin: 'kotlinx-serialization'
 
 android {
+    signingConfigs {
+        release {
+        }
+    }
     compileSdkVersion versions.compileSdk
     buildToolsVersion "29.0.3"
     defaultConfig {

@@ -41,6 +41,19 @@ data class DbRecord(
         @ColumnInfo(name = DbContract.Diary.COLUMN_INTENSITY)
         var intensity: Int = 0,
 
+        @ColumnInfo(name = DbContract.Diary.COLUMN_ARGUMENTS_FOR)
+        var argumentsFor: String = "",
+
+        @ColumnInfo(name = DbContract.Diary.COLUMN_ARGUMENTS_AGAINST)
+        var argumentsAgainst: String = "",
+
+        @ColumnInfo(name = DbContract.Diary.COLUMN_ALTERNATIVE_THOUGHT)
+        var alternativeThought: String = "",
+
+        @ColumnInfo(name = DbContract.Diary.COLUMN_CURRENT_EMOTIONS)
+        var currentEmotions: String = "",
+
+
         @ColumnInfo(name = DbContract.Diary.COLUMN_DATETIME)
         @Serializable(with = DateTimeAsTimestampSerializer::class)
         var datetime: DateTime = DateTime()
@@ -93,6 +106,10 @@ data class DbRecord(
         if (feelings != record.feelings) return false
         if (actions != record.actions) return false
         if (intensity != record.intensity) return false
+        if (argumentsFor != record.argumentsFor) return false
+        if (argumentsAgainst != record.argumentsAgainst) return false
+        if (alternativeThought != record.alternativeThought) return false
+        if (currentEmotions != record.currentEmotions) return false
         if (datetime != record.datetime) return false
 
         return true
@@ -109,6 +126,10 @@ data class DbRecord(
         if (feelings != record.feelings) return false
         if (actions != record.actions) return false
         if (intensity != record.intensity) return false
+        if (argumentsFor != record.argumentsFor) return false
+        if (argumentsAgainst != record.argumentsAgainst) return false
+        if (alternativeThought != record.alternativeThought) return false
+        if (currentEmotions != record.currentEmotions) return false
 
         return true
     }

@@ -19,6 +19,10 @@ object DbContract {
         const val COLUMN_FEELINGS = "_feelings"
         const val COLUMN_ACTIONS = "_actions"
         const val COLUMN_INTENSITY = "_intensity"
+        const val COLUMN_ARGUMENTS_FOR = "_arguments_for"
+        const val COLUMN_ARGUMENTS_AGAINST = "_arguments_against"
+        const val COLUMN_ALTERNATIVE_THOUGHT = "_alternative_thought"
+        const val COLUMN_CURRENT_EMOTIONS = "_current_emotions"
         const val COLUMN_DATETIME = "_datetime"
 
         const val GET_ALL_SQL = "SELECT * FROM $TABLE_NAME"

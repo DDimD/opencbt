@@ -95,6 +95,34 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:singleLine="false"
+                    android:id="@+id/argumentsForTextView"
+                    tools:text="Аргументы за"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:singleLine="false"
+                    android:id="@+id/argumentsAgainstTextView"
+                    tools:text="Аргументы против"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:singleLine="false"
+                    android:id="@+id/alternativeThoughtTextView"
+                    tools:text="Взвешенная мысль"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:singleLine="false"
+                    android:id="@+id/currentEmotionsTextView"
+                    tools:text="Текущая эмоция"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:singleLine="false"
                     android:textStyle="bold"
                     android:id="@+id/rationalTextView"
                     tools:text="Рациональный ответ"/>

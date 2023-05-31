@@ -39,6 +39,10 @@ class DetailsFragmentMaterial: Fragment() {
     private lateinit var dateTimeInputLayout: TextInputLayout;
     private lateinit var thoughtInputLayout: TextInputLayout
     private lateinit var rationalInputLayout: TextInputLayout
+    private lateinit var argumentsForInputLayout: TextInputLayout
+    private lateinit var argumentsAgainstInputLayout: TextInputLayout
+    private lateinit var alternativeThoughtInputLayout: TextInputLayout
+    private lateinit var currentEmotionsInputLayout: TextInputLayout
     private lateinit var situationInputLayout: TextInputLayout
     private lateinit var emotionsInputLayout: TextInputLayout
     private lateinit var feelingsInputLayout: TextInputLayout
@@ -199,6 +203,10 @@ class DetailsFragmentMaterial: Fragment() {
                 proceedString(record.situation, "enable_situation", situationInputLayout)
                 proceedString(record.feelings, "enable_feelings", feelingsInputLayout)
                 proceedString(record.actions, "enable_actions", actionsInputLayout)
+                proceedString(record.argumentsFor, "enable_arguments_for", argumentsForInputLayout)
+                proceedString(record.argumentsAgainst, "enable_arguments_against", argumentsAgainstInputLayout)
+                proceedString(record.alternativeThought, "enable_alternative_thought", alternativeThoughtInputLayout)
+                proceedString(record.currentEmotions, "enable_current_emotions", currentEmotionsInputLayout)
 
                 detailsViewModel.setRecordDate(record.datetime)
 
@@ -251,7 +259,6 @@ class DetailsFragmentMaterial: Fragment() {
                 feelingsInputLayout.visibility = View.GONE
             if (!prefs.getBoolean("enable_actions", true))
                 actionsInputLayout.visibility = View.GONE
-
             if (!prefs.getBoolean("enable_distortions", true)) {
                 hideDistortions()
             }
@@ -309,12 +316,29 @@ class DetailsFragmentMaterial: Fragment() {
         situationInputLayout = ll.findViewById(R.id.situationsInputLayout)
         feelingsInputLayout = ll.findViewById(R.id.feelingsInputLayout)
         actionsInputLayout = ll.findViewById(R.id.actionsInputLayout)
+        argumentsForInputLayout = ll.findViewById(R.id.argumentsForInputLayout)
+        argumentsAgainstInputLayout = ll.findViewById(R.id.argumentsAgainstInputLayout)
+        alternativeThoughtInputLayout = ll.findViewById(R.id.alternativeThoughtInputLayout)
+        currentEmotionsInputLayout = ll.findViewById(R.id.currentEmotionsInputLayout)
 
         thoughtInputLayout.editText?.setOnTouchListener(scrollListener)
         thoughtInputLayout.setEndIconOnClickListener {clearConfirm(thoughtInputLayout.editText)};
 
         rationalInputLayout.editText?.setOnTouchListener(scrollListener)
         rationalInputLayout.setEndIconOnClickListener{clearConfirm(rationalInputLayout.editText)};
+
+        argumentsForInputLayout.editText?.setOnTouchListener(scrollListener)
+        argumentsForInputLayout.setEndIconOnClickListener{clearConfirm(argumentsForInputLayout.editText)};
+
+        argumentsAgainstInputLayout.editText?.setOnTouchListener(scrollListener)
+        argumentsAgainstInputLayout.setEndIconOnClickListener{clearConfirm(argumentsAgainstInputLayout.editText)};
+
+        alternativeThoughtInputLayout.editText?.setOnTouchListener(scrollListener)
+        alternativeThoughtInputLayout.setEndIconOnClickListener{clearConfirm(alternativeThoughtInputLayout.editText)};
+
+        currentEmotionsInputLayout.editText?.setOnTouchListener(scrollListener)
+        currentEmotionsInputLayout.setEndIconOnClickListener{clearConfirm(currentEmotionsInputLayout.editText)};
+
 
         emotionsInputLayout.editText?.setOnTouchListener(scrollListener)
         emotionsInputLayout.setEndIconOnClickListener{clearConfirm(emotionsInputLayout.editText)};
@@ -400,7 +424,12 @@ class DetailsFragmentMaterial: Fragment() {
                     record.distortions,
                     record.feelings,
                     record.actions,
-                    record.intensity, detailsViewModel.recordDateTime)
+                    record.intensity,
+                    record.argumentsFor,
+                    record.argumentsAgainst,
+                    record.alternativeThought,
+                    record.currentEmotions,
+                    detailsViewModel.recordDateTime)
         } else {
             detailsViewModel.addRecord(record)
         }
@@ -414,6 +443,10 @@ class DetailsFragmentMaterial: Fragment() {
         val feelings = feelingsInputLayout.editText?.text.toString()
         val actions = actionsInputLayout.editText?.text.toString()
         val intensity = intensitySeekBar.value.toInt()
+        val argumentsFor = argumentsForInputLayout.editText?.text.toString()
+        val argumentsAgainst = argumentsAgainstInputLayout.editText?.text.toString()
+        val alternativeThought = alternativeThoughtInputLayout.editText?.text.toString()
+        val currentEmotions = currentEmotionsInputLayout.editText?.text.toString()
 
         var dist = 0x0
         if (allOrNothingCheckBox.isChecked) {
@@ -457,6 +490,10 @@ class DetailsFragmentMaterial: Fragment() {
                 feelings,
                 actions,
                 intensity,
+                argumentsFor,
+                argumentsAgainst,
+                alternativeThought,
+                currentEmotions,
                 detailsViewModel.recordDateTime
                // if (id == 0L) detailsViewModel.recordDateTime else detailsViewModel.currentRecord?.datetime ?: detailsViewModel.recordDateTime
         )
